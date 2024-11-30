@@ -1,0 +1,10 @@
+USE abc;
+SHOW TABLES;
+
+SELECT * FROM _User;
+SELECT * FROM DeletedUser;
+SELECT * FROM Violation;
+SELECT * FROM Oldname;
+SELECT * FROM POST;
+
+SELECT * FROM UsersAndPosts;
