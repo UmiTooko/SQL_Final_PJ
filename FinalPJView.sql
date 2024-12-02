@@ -9,6 +9,7 @@ SELECT _User.*
 FROM _User JOIN DeletedUser ON _User.UserID = DeletedUser.DeletedUserID 
 WHERE DeletedUser.DeletedUserDate IS NULL;
 
+
 #========================
 # View all deleted user
 #========================
@@ -16,6 +17,7 @@ CREATE VIEW DeletedUserList AS
 SELECT _User.*, DeletedUser.DeletedUserDate, DeletedUser.DeletedUserReason
 FROM _User JOIN DeletedUser ON _User.UserID = DeletedUser.DeletedUserID 
 WHERE DeletedUser.DeletedUserDate IS NOT NULL;
+
 
 #==============================================
 # View all User and their history name changes
@@ -34,6 +36,7 @@ SELECT Post.*
 FROM Post JOIN _User ON Post.PostUserId = _User.UserID
 JOIN DeletedUser ON _User.UserID = DeletedUser.DeletedUserID
 WHERE DeletedUser.DeletedUserDate IS NULL;
+
 
 #==============================
 # View all user and their posts

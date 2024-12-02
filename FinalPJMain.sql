@@ -29,7 +29,7 @@ CREATE TABLE OldName(
 );
 
 CREATE TABLE Violation(
-	VioladionID				INT					PRIMARY KEY AUTO_INCREMENT,
+	ViolationID				INT					PRIMARY KEY AUTO_INCREMENT,
     ViolationUserID			INT,
     ViolationLevel			SMALLINT,
     ViolationNote			TEXT,
@@ -39,7 +39,7 @@ CREATE TABLE Violation(
 CREATE TABLE DeletedUser(
 	DeletedUserID			INT					PRIMARY KEY,
     DeletedUserDate			DATETIME,
-    DeletedReason			TEXT
+    DeletedUserReason		TEXT
 );
 
 CREATE TABLE _Role(
@@ -59,15 +59,17 @@ CREATE TABLE Post(
 CREATE TABLE _Comment(
 	CommentID				INT 				PRIMARY KEY AUTO_INCREMENT,
     CommentPostID			INT					NOT NULL,
+    CommentParentsID		INT,
     CommentUserID			INT					NOT NULL,
-    CommentParentsID		INT,				# CommentID, A comment can be a reply to a comment
+																										  
     CommentContent			TEXT,
     CommentDate				DATETIME			NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE Image(
 	ImageID					INT					PRIMARY KEY AUTO_INCREMENT,
-    ImagePostID				INT					NOT NULL,
+    ImagePostID				INT,
+    ImageCommentID			INT,				
     ImageContent			TEXT				NOT NULL,
 	ImageDescription		TEXT
 );
@@ -115,6 +117,9 @@ ALTER TABLE Post
     
 ALTER TABLE Image
 	ADD FOREIGN KEY (ImagePostID) 	REFERENCES Post(PostID)				ON UPDATE CASCADE ON DELETE CASCADE;
+
+ALTER TABLE Image
+	ADD FOREIGN KEY (ImageCommentID) REFERENCES _Comment(CommentID)		ON UPDATE CASCADE ON DELETE CASCADE;
     
 ALTER TABLE UserToRole
 	ADD FOREIGN KEY (UserID) 		REFERENCES _User(UserID) 			ON UPDATE CASCADE;
@@ -128,13 +133,15 @@ ALTER TABLE BoxToUser
     ADD FOREIGN KEY (BoxID) 		REFERENCES Box(BoxID)				ON UPDATE CASCADE ON DELETE CASCADE;
     
 ALTER TABLE _Comment
-	ADD FOREIGN KEY (CommentParentsID) REFERENCES _Comment(CommentID)	ON UPDATE CASCADE;
+	ADD FOREIGN KEY (CommentParentsID) REFERENCES _Comment(CommentID)	ON UPDATE CASCADE ON DELETE CASCADE;
     
 ALTER TABLE _Comment
 	ADD FOREIGN KEY (CommentUserID) REFERENCES _User(UserID)			ON UPDATE CASCADE;
     
 ALTER TABLE _Comment
 	ADD FOREIGN KEY (CommentPostID) REFERENCES Post(PostID)				ON UPDATE CASCADE ON DELETE CASCADE;
+
+
     
 
     

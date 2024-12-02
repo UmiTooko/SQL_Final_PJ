@@ -77,8 +77,8 @@ VALUE(
     'China',
     'If her age is on the clock...',
     NULL,
-    NULL,
-    '2020-04-21'
+    'https://imgur.com/ekWOZkc',
+    '2001-04-21'
 );
 
 INSERT INTO _Role(
@@ -198,15 +198,99 @@ VALUE(
     "I love cha-han",
     "2023-02-02"
 );
-# ========== TESTING
-SELECT * FROM _user;
-SELECT * FROM DeletedUser;
-SELECT * FROM post;
-SELECT * FROM box;
-SELECT * FROM BOXTOUSER;
-DELETE FROM _user where userid = 3;
-UPDATE _User SET UserDisplayName = "Explotano catto" WHERE UserID = 5;
-SELECT * FROM OldName;
-UPDATE DeletedUser SET DeletedUserDate = NOW() WHERE DeletedUserID = 2;
 
-DELETE FROM Box WHERE BoxID = 1;
+INSERT INTO Violation(
+	ViolationUserID,
+    ViolationLevel,
+    ViolationNote,
+    ViolationDate
+) VALUES (
+	6,
+    1,
+    "SPAM",
+    NOW()
+),(
+	5,
+    3,
+    "racist",
+    '2021-01-01'
+);
+
+INSERT INTO _Comment(
+    CommentPostID,
+    CommentUserID,
+    CommentParentsID,
+    CommentContent	,
+    CommentDate
+) VALUES(
+	3,
+    1,
+    NULL,
+    "Ok I see",
+    '2015-12-01'
+),(
+	4,
+    4,
+    1,
+    "Lmao!",
+    '2022-11-21'
+),
+(
+	1,
+    2,
+    NULL,
+    "ẺUHƯLFHQLIÈUHQƯLI ÙHQƯLÌUQƯNLF ỊQƯLÌUQLFQHBLQBE",
+    '2024-09-11'
+),(
+	3,
+    3,
+    NULL,
+    'ĐỪNG',
+    '2013-06-19'
+),(
+	7,
+    2,
+    NULL,
+    'hazuhazu desuu',
+    '2021-11-11'
+),(
+	6,
+    1,
+    NULL,
+    'Cảm ơn chia sẻ của bạn nhé',
+    '2024-02-21'
+),(
+	7,
+    2,
+    5,
+    "bump by myself haha",
+    '2021-11-12'
+);
+
+
+INSERT INTO Image(
+    ImagePostID,
+    ImageCommentID,
+    ImageContent,
+	ImageDescription
+) VALUES(
+	1,
+    NULL,
+    "https://imgur.com/zu9YjQT",
+    "Nah"
+),(
+	2,
+    NULL,
+    "https://imgur.com/btCDPi2",
+    "d"
+),(
+	NULL,
+    3,
+    "https://imgur.com/ABNow3v",
+    NULL
+),(
+	5,
+    NULL,
+    "https://imgur.com/tPLjitp",
+    NULL
+);
