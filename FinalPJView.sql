@@ -4,7 +4,7 @@ SHOW TABLES;
 #============
 # View all active user (not deleted)
 #============
-CREATE VIEW UserList AS
+CREATE VIEW ActiveUserList AS
 SELECT _User.* 
 FROM _User JOIN DeletedUser ON _User.UserID = DeletedUser.DeletedUserID 
 WHERE DeletedUser.DeletedUserDate IS NULL;

@@ -110,6 +110,24 @@ VALUE(
 	'Đeadge',
     'FFFFFF'
 );
+
+INSERT INTO UserToRole(
+	UserID, 
+    RoleID
+) VALUE(
+	1,1
+),(
+	2,3
+),(
+	1,4
+),(
+	2,2
+),(
+	5,4
+),(
+	6,4
+);
+
 INSERT INTO Box(
 	BoxName,
     BoxAvatar,
@@ -294,3 +312,5 @@ INSERT INTO Image(
     "https://imgur.com/tPLjitp",
     NULL
 );
+
+COMMIT;
