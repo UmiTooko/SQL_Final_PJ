@@ -19,6 +19,7 @@ CREATE PROCEDURE UserInfo (IN InUserID INT)
 BEGIN
     SELECT 
         InUserID AS 'TheUserID', 
+        (SELECT UserDisplayName FROM _User WHERE UserID = InUserID) AS DisplayName,
         (SELECT COUNT(BoxID) FROM BoxToUser 
          WHERE UserID = InUserID) AS NumberOfBoxesJoined,
 		(SELECT COUNT(UserID) FROM UserToRole 
@@ -30,6 +31,5 @@ BEGIN
         (SELECT COUNT(OldNameID) FROM OldName 
          WHERE OldNameUserID = InUserID) AS NumberOfOldNames,
         (SELECT COUNT(ViolationID) FROM Violation 
-         WHERE ViolationUserID = InUserID) AS NumberOfViolations
-    ;
+         WHERE ViolationUserID = InUserID) AS NumberOfViolations;
 END??
