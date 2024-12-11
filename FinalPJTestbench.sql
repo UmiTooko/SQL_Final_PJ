@@ -1,7 +1,7 @@
 USE abc;
 SHOW TABLES;
 
-# Check triggers
+# Check triggers (not all commands run)
 
 SELECT * FROM ActiveUserList;
 SELECT * FROM _User;
@@ -88,10 +88,10 @@ ORDER BY TotalUsersInBox DESC;
 
 
 
-#========= Rollback
+# Rollback
 DELETE FROM Box WHERE BoxID = 1;
 ROLLBACK;
 
-#===================
+# Call procedure
 CALL UserJoinBox(1,2);
 CALL UserInfo(1);
