@@ -31,7 +31,7 @@ VALUE(
     '2003-03-31',
     'M',
     'Vietnam',
-    'Killin myself',
+    'Killing myself',
     'https://imgur.com/omwAp6h',
     'https://imgur.com/f6Oqytv',
     '2011-10-20'
@@ -75,7 +75,7 @@ VALUE(
     '2002-12-12',
     'F',
     'China',
-    'If her age is on the clock',
+    'If her age is on the clock...',
     NULL,
     'https://imgur.com/ekWOZkc',
     '2001-04-21'
