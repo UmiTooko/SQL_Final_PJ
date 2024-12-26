@@ -213,7 +213,7 @@ VALUE(
 ),(
 	1,
     1,
-    'Fresh perspectives in February 2023. It’s a time to realign with my aspirations and focus on personal growth. Grateful for the support and inspiration around me.'
+    'Fresh perspectives in February 2023. It’s a time to realign with my aspirations and focus on personal growth. Grateful for the support and inspiration around me.',
     '2023-02-02'
 );
 

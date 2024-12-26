@@ -13,10 +13,10 @@ select * from box;
 SELECT * FROM UsersAndPosts;
 SELECT * FROM BoxToUser;
 DELETE FROM _user where userid = 3;
-UPDATE _User SET UserDisplayName = "Explotano catto" WHERE UserID = 5;
+UPDATE _User SET UserDisplayName = "Explotano catto" WHERE UserID = 4;
 SELECT * FROM OldName;
-UPDATE DeletedUser SET DeletedUserDate = NOW() WHERE DeletedUserID = 6;
-
+UPDATE DeletedUser SET DeletedUserDate = NOW() WHERE DeletedUserID = 2;
+UPDATE DeletedUser SET DeletedUserDate = NOW() WHERE DeletedUserID = 5;
  
 #INNER JOIN
 SELECT u.UserDisplayName, r.RoleName
